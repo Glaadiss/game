@@ -20,15 +20,15 @@
 			this.x = random();
 			this.y = random();
 			this.r = Math.floor((Math.random() * 20) + 10);;
-			this.velocity = 1;
-			this.limit = 800;
+			this.velocity = 0;
+			this.limit = 900;
 			this.a = Math.random() * 1 + 0.1;
 			this.b = Math.random() * 1 + 0.1;
 			
 			this.update = function(delta) {
 				this.y += this.velocity * delta * this.a;
 				this.x += this.velocity * delta * this.b;
-				if (this.y >= this.limit || this.y <= 25){
+				if (this.y >= this.limit-300 || this.y <= 25){
 				this.velocity = -this.velocity;
 				this.b*=-1;
 				}

@@ -18,7 +18,7 @@ function Square() {
 	this.y = random();
 	this.r = 50
 	this.velocity = 0.7;
-	this.limit = 1050;
+	this.limit = 900;
 	this.a = Math.random() * 1 + 0.1;
 	this.b = Math.random() * 1 + 0.1;
 	this.rotate = 1;
