@@ -16,16 +16,18 @@ function random()
 function Square() {
 	this.x = random();
 	this.y = random();
-	this.velocity = 0.3;
-	this.limit = 600;
+	this.r = 50
+	this.velocity = 0.7;
+	this.limit = 1050;
 	this.a = Math.random() * 1 + 0.1;
 	this.b = Math.random() * 1 + 0.1;
+	this.rotate = 1;
 
 //logika sterująca obiektem
 this.update = function(delta) {
 	this.y += this.velocity * delta * this.a;
 	this.x += this.velocity * delta * this.b;
-	if (this.y >= this.limit || this.y <= 0){
+	if (this.y >= this.limit-300 || this.y <= 0){
 	this.velocity = -this.velocity;
 	this.b*=-1;
 	}
@@ -33,14 +35,20 @@ this.update = function(delta) {
 	this.velocity = -this.velocity;
 	this.a*=-1;
 	}
+
 }
 
 //funkcją rysująca obiekt
 this.draw = function(ctx) {
-	ctx.translate(this.x+75, this.y+75)
-	ctx.rotate(Math.PI/180);
-	ctx.translate(-this.x-75, -this.y-75)
-	ctx.fillStyle = getRandomColor();
-	ctx.fillRect(this.x, this.y, 50, 50);
+
+	ctx.save();
+	ctx.translate(this.x+ this.r/2, this.y+this.r/2)
+	ctx.rotate(this.rotate * Math.PI/180);
+	this.rotate++;
+	ctx.translate(-1*(this.x+this.r/2), -1*(this.y+this.r/2));
+	ctx.fillStyle = getRandomColor();	
+	ctx.fillRect(this.x, this.y, this.r, this.r);
+	ctx.restore();
+
 	}
 }

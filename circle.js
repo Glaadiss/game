@@ -28,11 +28,11 @@
 			this.update = function(delta) {
 				this.y += this.velocity * delta * this.a;
 				this.x += this.velocity * delta * this.b;
-				if (this.y >= this.limit || this.y <= 0){
+				if (this.y >= this.limit || this.y <= 25){
 				this.velocity = -this.velocity;
 				this.b*=-1;
 				}
-				if (this.x >= this.limit || this.x <= 0){
+				if (this.x >= this.limit || this.x <= 25){
 				this.velocity = -this.velocity;
 				this.a*=-1;
 				}

@@ -2,8 +2,8 @@
 window.onload = function(){
 
 		var canvas = document.getElementById('qwe');
-		canvas.width = 1000;
-		canvas.height = 800;
+		canvas.width = 1100;
+		canvas.height = 830;
 		var c = canvas.getContext('2d');
 		
 		var tab = [];
