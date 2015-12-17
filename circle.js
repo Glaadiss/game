@@ -21,18 +21,19 @@
 			this.y = random();
 			this.r = Math.floor((Math.random() * 20) + 10);;
 			this.velocity = 0;
-			this.limit = 900;
-			this.a = Math.random() * 1 + 0.1;
-			this.b = Math.random() * 1 + 0.1;
+			this.limit = 1100;
+			this.a = Math.random() -0.5;
+			this.b = Math.random() -0.5;
+			this.play = true;
 			
 			this.update = function(delta) {
 				this.y += this.velocity * delta * this.a;
 				this.x += this.velocity * delta * this.b;
-				if (this.y >= this.limit-300 || this.y <= 25){
+				if (this.y >= this.limit-300 || this.y <= 0){
 				this.velocity = -this.velocity;
 				this.b*=-1;
 				}
-				if (this.x >= this.limit || this.x <= 25){
+				if (this.x >= this.limit || this.x <= 0){
 				this.velocity = -this.velocity;
 				this.a*=-1;
 				}
